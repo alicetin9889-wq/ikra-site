@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali'den İkra'ya</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:linear-gradient(to bottom,#050505,#0f1720);
+font-family:Arial,sans-serif;
+overflow:hidden;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:url('https://i.imgur.com/YKY28eT.png');
+opacity:0.25;
+animation:move 60s linear infinite;
+}
+
+@keyframes move{
+from{background-position:0 0;}
+to{background-position:1000px 1000px;}
+}
+
+.container{
+position:relative;
+width:90%;
+max-width:400px;
+padding:25px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.05);
+box-shadow:0 0 25px rgba(0,255,180,0.2);
+text-align:center;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+font-size:32px;
+color:#7fffd4;
+margin-bottom:20px;
+}
+
+.text{
+font-size:18px;
+line-height:1.7;
+color:#f1f1f1;
+min-height:230px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#7fffd4;
+color:black;
+font-size:16px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.jack{
+margin-top:20px;
+font-size:14px;
+opacity:0.8;
+color:#9fffe0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+<h1>✉️ Ali'den İkra'ya</h1>
+
+<div class="text" id="text">
+
+İkra…<br><br>
+
+Seninle konuşmak beklediğimden fazla güzel geldi bana.  
+Hot Wheels muhabbetlerimiz, random konuşmalarımız, attığın küçük mesajlar falan istemeden günümün parçası oldu.<br><br>
+
+Bir de yeşil gözlerin var tabii… hâlâ fazla iyi bence.<br><br>
+
+Şu mobil oyun olayını sevmemem bile biraz kıskançlıktan galiba 😭 Çünkü seni bazen herkesten biraz daha farklı görüyorum.<br><br>
+
+İyi ki doğdun 🤍
+
+</div>
+
+<button onclick="showJack()">Son Mesaj</button>
+
+<div class="jack" id="jack"></div>
+
+</div>
+
+<script>
+
+function showJack(){
+
+document.getElementById("jack").innerHTML = `
+🧑‍⚕️<br><br>
+“İkra, Ali’yi üzme.<br>
+Adam sana düşmüş.”<br><br>
+— Dr. Jack Shephard
+`;
+
+}
+
+</script>
+
+</body>
+</html>
