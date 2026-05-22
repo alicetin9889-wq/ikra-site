@@ -3,90 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ali'den İkra'ya</title>
+<title>İkra 💞</title>
 
 <style>
 
 body{
 margin:0;
 padding:0;
-background:linear-gradient(to bottom,#050505,#0f1720);
-font-family:Arial,sans-serif;
 overflow:hidden;
-color:white;
+font-family:Arial,sans-serif;
+background:linear-gradient(180deg,#ff4d6d,#ff8fab,#ffc2d1);
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
-}
-
-.stars{
-position:absolute;
-width:100%;
-height:100%;
-background:url('https://i.imgur.com/YKY28eT.png');
-opacity:0.25;
-animation:move 60s linear infinite;
-}
-
-@keyframes move{
-from{background-position:0 0;}
-to{background-position:1000px 1000px;}
+color:white;
 }
 
 .container{
 position:relative;
 width:90%;
-max-width:400px;
+max-width:420px;
 padding:25px;
-border-radius:25px;
-backdrop-filter:blur(10px);
-background:rgba(255,255,255,0.05);
-box-shadow:0 0 25px rgba(0,255,180,0.2);
+border-radius:30px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+box-shadow:0 0 25px rgba(255,255,255,0.3);
 text-align:center;
-animation:fade 2s;
+animation:fade 1s;
+z-index:2;
 }
 
 @keyframes fade{
-from{opacity:0; transform:translateY(20px);}
-to{opacity:1; transform:translateY(0);}
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 h1{
-font-size:32px;
-color:#7fffd4;
-margin-bottom:20px;
+font-size:34px;
+margin-bottom:15px;
 }
 
 .text{
-font-size:18px;
+font-size:19px;
 line-height:1.7;
-color:#f1f1f1;
-min-height:230px;
+min-height:260px;
+animation:fade 1s;
 }
 
 button{
-margin-top:20px;
-padding:12px 25px;
+padding:12px 28px;
 border:none;
-border-radius:20px;
-background:#7fffd4;
-color:black;
-font-size:16px;
-cursor:pointer;
+border-radius:25px;
+font-size:17px;
+background:white;
+color:#ff4d88;
 font-weight:bold;
+cursor:pointer;
+margin-top:20px;
 transition:0.3s;
 }
 
 button:hover{
-transform:scale(1.05);
+transform:scale(1.08);
 }
 
-.jack{
-margin-top:20px;
-font-size:14px;
-opacity:0.8;
-color:#9fffe0;
+.heart{
+position:absolute;
+font-size:22px;
+animation:float 7s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+100%{
+transform:translateY(-120vh);
+opacity:1;
+}
+}
+
+.ikos{
+position:absolute;
+font-size:18px;
+opacity:0.15;
+font-weight:bold;
+animation:spin 10s linear infinite;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+.jackimg{
+width:120px;
+border-radius:20px;
+margin-top:15px;
+box-shadow:0 0 15px rgba(255,255,255,0.4);
 }
 
 </style>
@@ -94,43 +117,83 @@ color:#9fffe0;
 
 <body>
 
-<div class="stars"></div>
+<div class="heart" style="left:10%; animation-delay:0s;">💞</div>
+<div class="heart" style="left:25%; animation-delay:2s;">💖</div>
+<div class="heart" style="left:40%; animation-delay:1s;">💕</div>
+<div class="heart" style="left:70%; animation-delay:3s;">💘</div>
+<div class="heart" style="left:85%; animation-delay:5s;">💗</div>
+
+<div class="ikos" style="top:10%; left:5%;">ikos 💞</div>
+<div class="ikos" style="top:70%; left:75%;">ikos 💞</div>
+<div class="ikos" style="top:40%; left:80%;">ikos 💞</div>
 
 <div class="container">
 
-<h1>✉️ Ali'den İkra'ya</h1>
+<h1>✉️ Ali’den İkra’ya</h1>
 
 <div class="text" id="text">
+İkra… 💞<br><br>
 
-İkra…<br><br>
+Seninle konuşmak beklediğimden fazla güzel geldi bana.<br><br>
 
-Seninle konuşmak beklediğimden fazla güzel geldi bana.  
-Hot Wheels muhabbetlerimiz, random konuşmalarımız, attığın küçük mesajlar falan istemeden günümün parçası oldu.<br><br>
+Hot Wheels muhabbetlerimiz, random konuşmalarımız falan istemeden günümün parçası oldu 😭<br><br>
 
-Bir de yeşil gözlerin var tabii… hâlâ fazla iyi bence.<br><br>
-
-Şu mobil oyun olayını sevmemem bile biraz kıskançlıktan galiba 😭 Çünkü seni bazen herkesten biraz daha farklı görüyorum.<br><br>
-
-İyi ki doğdun 🤍
-
+Bir de yeşil gözlerin var tabii… hâlâ fazla iyi bence.
 </div>
 
-<button onclick="showJack()">Son Mesaj</button>
-
-<div class="jack" id="jack"></div>
+<button onclick="nextScene()">Devam Et 💌</button>
 
 </div>
 
 <script>
 
-function showJack(){
+let step = 0;
 
-document.getElementById("jack").innerHTML = `
-🧑‍⚕️<br><br>
-“İkra, Ali’yi üzme.<br>
-Adam sana düşmüş.”<br><br>
-— Dr. Jack Shephard
+function nextScene(){
+
+const text = document.getElementById("text");
+
+step++;
+
+if(step == 1){
+
+text.innerHTML = `
+Şu mobil oyun olayını sevmemem bile biraz kıskançlıktan galiba 😭<br><br>
+
+Çünkü seni bazen herkesten biraz daha farklı görüyorum.<br><br>
+
+Ve attığın küçücük mesajlar bile insanın gününü değiştirebiliyor.
 `;
+
+}
+
+else if(step == 2){
+
+text.innerHTML = `
+🎂 İyi ki doğdun İkra 💞<br><br>
+
+Umarım hep mutlu olursun.<br><br>
+
+Ve şimdi Jack’in mesajı geliyor...
+`;
+
+}
+
+else if(step == 3){
+
+text.innerHTML = `
+🧑‍⚕️<br><br>
+
+“İkra, Ali’yi üzme.<br><br>
+
+Adam sana düşmüş 😭”<br><br>
+
+— Dr. Jack Shephard<br><br>
+
+<img class="jackimg" src="https://upload.wikimedia.org/wikipedia/en/5/52/Jack_Shephard.jpg">
+`;
+
+}
 
 }
 
